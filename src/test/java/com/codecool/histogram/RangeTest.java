@@ -7,16 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class RangeTest {
     /*
-Range class is covered with tests, by implementing the RangeTest class.
-Provide test cases for constructor. The following cases should be covered:
-from < 0
-to < from
-Provide test cases for isInRange(). The following cases should be covered:
-- word's length in range
-- word's length equals to range from
-- word's length equals to range to
-- word's length is out of range
-Provide test case for a toString() method */
+*/
     Range TestRange = new Range(1, 7);
 
     @Test
@@ -46,5 +37,8 @@ Provide test case for a toString() method */
         assertFalse(TestRange.isInRange("test567333"));
     }
 
-
+    @Test
+    void toString_validRangetoString_printInterval(){
+        assertEquals("1  - 7 ", TestRange.toString());
+    }
 }
