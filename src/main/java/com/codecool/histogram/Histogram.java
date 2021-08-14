@@ -84,8 +84,17 @@ public class Histogram {
      *      `V' = (V - min) * 100 / (max - min)`
      */
     public void normalizeValues() {
-        // TODO: Implement normalization method
-    }
+        Map<Range, Integer> normalizedHistogram = new HashMap<>();;
+        Integer max = Collections.max(histogram.values());
+        Integer min = Collections.min(histogram.values());
+        for (Range range : histogram.keySet()) {
+            Integer count = histogram.get(range);
+            Integer normalCount = (count - min) * 100 / (max - min);
+            normalizedHistogram.put(range, normalCount);
+        }
+        histogram = normalizedHistogram;
+    };
+
 
     /**
      * Returns with the string representation of the generated histogram
