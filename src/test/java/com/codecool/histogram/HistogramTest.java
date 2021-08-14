@@ -66,7 +66,18 @@ public class HistogramTest {
         assertEquals(expected, histogramUnderTest.generate("", expectedRanges));
     }
 
-
+    @Test
+    @Order(7)
+    void getGenerate_nullAsText(){
+        expectedRanges.add(expectedRange1);
+        assertThrows(IllegalArgumentException.class, () -> histogramUnderTest.generate(null, expectedRanges));
+    }
+    @Test
+    @Order(8)
+    void getGenerate_nullAsRanges(){
+        expectedRanges.add(expectedRange1);
+        assertThrows(IllegalArgumentException.class, () -> histogramUnderTest.generate(null, expectedRanges));
+    }
 
 
 
