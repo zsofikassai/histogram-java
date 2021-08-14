@@ -58,9 +58,17 @@ public class HistogramTest {
         assertEquals(expected, histogramUnderTest.generate("Hellooooooooooo lkkkhellohello", expectedRanges));
     }
 
+    @Test
+    @Order(6)
+    void getGenerate_emptyText(){
+        expectedRanges.add(expectedRange1);
+        Map<Range, Integer> expected = new HashMap<>();
+        assertEquals(expected, histogramUnderTest.generate("", expectedRanges));
+    }
 
 
-    
+
+
 
 
 }
