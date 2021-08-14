@@ -8,6 +8,14 @@ import java.util.Objects;
 public class Range {
     private int from, to;
 
+    public int getFrom() {
+        return from;
+    }
+
+    public int getTo() {
+        return to;
+    }
+
     /**
      * Constructs a Range with specified lower and upper limit.
      * Lower and upper limits cannot be smaller than 0.
