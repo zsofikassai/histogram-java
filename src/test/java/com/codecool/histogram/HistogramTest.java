@@ -50,6 +50,16 @@ public class HistogramTest {
         assertEquals(expected, histogramUnderTest.generate("Hello lkk k 44 hello hello", expectedRanges));
     }
 
+    @Test
+    @Order(5)
+    void getGenerate_wordsOutOfRanges(){
+        expectedRanges.add(expectedRange1);
+        Map<Range, Integer> expected = new HashMap<>();
+        assertEquals(expected, histogramUnderTest.generate("Hellooooooooooo lkkkhellohello", expectedRanges));
+    }
+
+
+
     
 
 
