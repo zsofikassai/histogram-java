@@ -79,7 +79,11 @@ public class HistogramTest {
         assertThrows(IllegalArgumentException.class, () -> histogramUnderTest.generate(null, expectedRanges));
     }
 
-
+    @Test
+    @Order(9)
+    void getHistogram_beforeGenerated_returnEmpty(){
+        Histogram newHistogram = new Histogram();
+        assertEquals(Collections.emptyMap(), newHistogram.getHistogram());}
 
 
 }
